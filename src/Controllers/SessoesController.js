@@ -1,12 +1,17 @@
 const SessoesModel = require("../Models/SessoesModel")
-
+const UsuarioModel = require("../Models/UsuarioModel")
 class SessoesController {
 
     async create(req, res){
         try {
-            const Sessoes = await SessoesModel.create(req.body);
+            const usuarioEncontrado = await UsuarioModel.findById(req.body.id_usuario);
 
-            return res.status(200).json(Sessoes);
+            if(!usuarioEncontrado) return res.status(404).json({message: "Usuario não encontrado"})
+
+
+            const sessoes = await SessoesModel.create(req.body);
+
+            res.status(200).json(sessoes);
         } catch (error) {
             res.status(500).json({message: "Deu ruim", error: error.message})
         }
@@ -15,9 +20,9 @@ class SessoesController {
 
     async read(req, res){
         try {
-            const Sessoess = await SessoesModel.find().populate('id_usuarios', "-senha");
+            const sessoes = await SessoesModel.find().populate('id_usuario', "-senha");
         
-            return res.status(200).json(Sessoess);
+            return res.status(200).json(sessoes);
         } catch (error) {
             res.status(500).json({message: "Deu ruim", error: error.message})
         }
@@ -30,8 +35,8 @@ class SessoesController {
 
     async delete(req, res){
         try {
-            const {id} = req.params
-            const sessaoEncontrada = await SessoesModel.findById(id);
+            const {id_usuario} = req.params
+            const sessaoEncontrada = await SessoesModel.findOne({id_usuario});
 
             if (!sessaoEncontrada) return res.status(404).json({message: "Sessão não encontrada"});
             await sessaoEncontrada.deleteOne();

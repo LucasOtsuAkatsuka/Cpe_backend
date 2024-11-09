@@ -1,12 +1,12 @@
-const { MongoOIDCError } = require("mongodb");
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
 const SessoesSchema = new Schema({
-    id_usuarios: {
+    id_usuario: {
         type: Schema.Types.ObjectId,
-        ref: "usuarios",
+        ref: 'usuarios',
         unique: true,
     }
 }, {

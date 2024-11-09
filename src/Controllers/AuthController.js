@@ -1,4 +1,4 @@
-const { ReturnDocument } = require("mongodb");
+
 const UsuarioModel = require("../Models/UsuarioModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");

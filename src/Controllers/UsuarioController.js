@@ -8,7 +8,7 @@ class UsuarioController {
 
             const { senha, ...newUsuario } = usuario.toObject();
 
-            return res.status(200).json(newUsuario);
+            res.status(200).json(newUsuario);
         } catch (error) {
             res.status(500).json({message: "Deu ruim", error: error.message})
         } 

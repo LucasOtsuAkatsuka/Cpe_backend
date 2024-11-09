@@ -10,4 +10,4 @@ const login = validateRequest({
 
 module.exports = {
     login,
-}
+};

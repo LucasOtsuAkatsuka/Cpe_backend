@@ -18,7 +18,6 @@ function verificarJwt(req, res, next){
 
         next();
     })
-
 }
 
 module.exports = verificarJwt;
