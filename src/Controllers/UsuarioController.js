@@ -4,8 +4,9 @@ class UsuarioController {
 
     async create(req, res){
         try {
+            console.log("cheguei no back 1")
             const usuario = await UsuarioModel.create(req.body);
-
+            console.log("cheguei no back 2")
             const { senha, ...newUsuario } = usuario.toObject();
 
             res.status(200).json(newUsuario);
