@@ -6,10 +6,8 @@ class SessoesController {
         try {
             const usuarioEncontrado = await UsuarioModel.findById(req.body.id_usuario);
             if(!usuarioEncontrado) return res.status(404).json({message: "Usuario não encontrado"})
-            console.log("cheguei no back 1 sessao");
             const sessoes = await SessoesModel.create(req.body);
-            console.log("cheguei no back 2 sessao");
-
+          
             res.status(200).json(sessoes);
         } catch (error) {
             res.status(500).json({message: "Deu ruim", error: error.message})

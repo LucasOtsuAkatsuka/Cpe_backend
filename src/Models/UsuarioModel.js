@@ -18,7 +18,11 @@ const UsuarioSchema = new Schema({
         unique: true,
     },
     cargo: String,
-    status: String
+    status: String,
+    nivel: {
+        type: String,
+        default: "comum",
+    },
 })
 
 

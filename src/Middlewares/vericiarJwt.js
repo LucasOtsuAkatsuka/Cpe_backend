@@ -13,8 +13,7 @@ function verificarJwt(req, res, next){
 
     
     jwt.verify(token, process.env.JWT_SECRETE, (err, decoded)=>{
-        if(err) return res.status(403).json({message: "JWT token inválido"});
-        console.log("Token Decodificado:", decoded); 
+        if(err) return res.status(403).json({message: "JWT token inválido"}); 
         req.usuarioId = decoded.usuario?._id;
         
         next();

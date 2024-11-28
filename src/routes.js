@@ -13,8 +13,8 @@ const rotas = Router();
 //USUARIOS
 rotas.post('/usuarios',UsuarioValidator.create, UsuarioController.create)
 rotas.get('/usuarios', verificarJwt ,UsuarioController.read)
-rotas.delete('/usuarios/:id',verificarJwt,verificarUsuario, UsuarioValidator.destroy, UsuarioController.delete)
-rotas.put("/usuarios/:id", verificarJwt , verificarUsuario , UsuarioValidator.update, UsuarioController.update)
+rotas.delete('/usuarios/:id',verificarJwt, UsuarioValidator.destroy, UsuarioController.delete)
+rotas.put("/usuarios/:id", verificarJwt  , UsuarioValidator.update, UsuarioController.update)
 
 
 //SESSOES

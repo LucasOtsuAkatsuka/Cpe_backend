@@ -25,6 +25,7 @@ const update = validateRequest({
         senha: z.string().optional(),
         cargo: z.string().optional(),
         status: z.string().optional(),
+        nivel: z.string().optional(),
     }),
 
     params: z.object({
