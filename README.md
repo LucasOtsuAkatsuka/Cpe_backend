@@ -36,11 +36,9 @@ src/
 ```
 
 ## 🚀 **Tecnologias Utilizadas**
-- **Node.js**
-- **Express.js**
-- **MongoDB & Mongoose**
-- **JWT (Json Web Token)**
-- **Express Validator**
+- **Linguagem:** Javascript
+- **Frameworks e bibliotecas:** Node.js, Express.js, nodemon, bcrypt, dotenv, jsonwebtoken, zod, zod-express-middleware, cors e mongoose
+- **Branco de dados:** MongoDB
 
 ## 📌 **Como Rodar o Projeto**
 1. Clone este repositório:
