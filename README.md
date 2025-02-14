@@ -1,6 +1,6 @@
-# 🛠 Projeto Node.js - API de Sessões e Usuários
+# 🛠 API de Sessões e Usuários para controle de registro de ponto
 
-Este projeto é uma API RESTful desenvolvida em **Node.js**, utilizando **Express**, **MongoDB** e **JWT** para autenticação. 
+Este projeto foi um projeto desenvolvido durante o trainee feito na CPEjr, o foco desta API é tratar e validar dados para requisições no banco de dados.
 
 ## 📂 Estrutura do Projeto
 
