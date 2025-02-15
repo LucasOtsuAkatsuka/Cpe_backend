@@ -35,6 +35,23 @@ src/
 │── routes.js           # 📌 Definição das rotas da API
 ```
 
+## **Diagrama Relacional**
+
+![Diagrama sem nome drawio (11)](https://github.com/user-attachments/assets/d9d2ecfa-0407-4c19-9912-8c26ed92476d)
+
+Explicação da Relação
+
+Usuário (UsuarioModel): Representa os usuários do sistema, contendo informações como email, senha, nome, cargo, status e nivel.
+
+Sessão (SessoesModel): Cada sessão está associada a um único usuário, identificado pelo campo id_usuario, que é uma referência ao modelo usuarios no banco de dados.
+
+Relacionamento:
+
+1:1 (Um para Um) → Cada usuário pode ter no máximo uma sessão ativa, pois o id_usuario em SessoesModel.
+
+Quando um usuário for deletado, a sua sessão correspondente também será apagada.
+
+
 ## 🚀 **Tecnologias Utilizadas**
 - **Linguagem:** Javascript
 - **Frameworks e bibliotecas:** Node.js, Express.js, nodemon, bcrypt, dotenv, jsonwebtoken, zod, zod-express-middleware, cors e mongoose
